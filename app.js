@@ -10,7 +10,8 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(cors())
 
-//const Router...
+const gamesRouter = require('./src/routes/game-routes')
+app.use('/games', gamesRouter)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500
