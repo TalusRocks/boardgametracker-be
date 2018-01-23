@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.integer('game_id')
     table.foreign('game_id').references('id').inTable('games')
     table.string('comment').notNullable().defaultTo('')
+    table.date('played_on').defaultTo(null)
     table.timestamps(true, true)
   })
 }

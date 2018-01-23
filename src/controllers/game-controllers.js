@@ -8,6 +8,7 @@ class GameController {
       res.json({games})
     })
   }
+
 }
 
 module.exports = GameController

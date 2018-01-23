@@ -5,4 +5,5 @@ const controller = require('../controllers/game-controllers')
 //following 'games/'
 router.get('/', controller.getGames)
 
+
 module.exports = router
