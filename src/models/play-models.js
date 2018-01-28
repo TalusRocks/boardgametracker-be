@@ -7,13 +7,11 @@ class PlayModel {
   }
 
   static postPlay(body){
+    console.log(body, "body from play-models");
+    //how or where does play id get generated?
     return knex('plays')
-      .insert({
-        user_id: body.userId,
-        game_id: body.gameId,
-        comment: body.comment,
-        played_on: body.playedOn
-      })
+      .insert(body)
+      .returning('*')
   }
 }
 

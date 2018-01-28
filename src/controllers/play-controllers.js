@@ -10,9 +10,9 @@ class PlayController {
   }
 
   static postPlay(req, res, next){
-    model.postPlay(body)
+    model.postPlay(req.body)
     .then(play => {
-      res.json({play})
+      res.status(201).json({play})
     })
   }
 
