@@ -4,10 +4,9 @@ exports.up = function(knex, Promise) {
     table.increments()
     table.integer('user_id')
     table.foreign('user_id').references('id').inTable('users')
-    table.integer('game_id')
-    table.foreign('game_id').references('id').inTable('games')
-    table.string('comment').notNullable().defaultTo('')
     table.date('played_on').defaultTo(null)
+    table.integer('bgg_game_id')
+    table.string('comment').notNullable().defaultTo('')
     table.timestamps(true, true)
   })
 }
