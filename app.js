@@ -10,10 +10,6 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(cors())
 
-//****currently fetching games from BGG, not database - may be moot route
-const gamesRouter = require('./src/routes/game-routes')
-app.use('/games', gamesRouter)
-
 const playsRouter = require('./src/routes/play-routes')
 app.use('/plays', playsRouter)
 
