@@ -7,8 +7,6 @@ class PlayModel {
   }
 
   static postPlay(body){
-    console.log(body, "body from play-models");
-    //how or where does play id get generated?
     return knex('plays')
       .insert(body)
       .returning('*')
