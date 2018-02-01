@@ -11,6 +11,14 @@ class PlayModel {
       .insert(body)
       .returning('*')
   }
+
+  static deleteAllPlays(){
+    return knex('plays')
+      .del()
+      .then(() => {
+        return knex('plays')
+      })
+  }
 }
 
 module.exports = PlayModel

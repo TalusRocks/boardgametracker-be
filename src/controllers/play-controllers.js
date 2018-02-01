@@ -16,6 +16,13 @@ class PlayController {
     })
   }
 
+  static deleteAllPlays(req, res, next){
+    model.deleteAllPlays()
+    .then(plays => {
+      res.status(201).json({plays})
+    })
+  }
+
 }
 
 module.exports = PlayController
