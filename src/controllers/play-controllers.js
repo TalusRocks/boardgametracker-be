@@ -9,8 +9,22 @@ class PlayController {
     })
   }
 
+  static getOnePlay(req, res, next){
+    model.getOnePlay(req.params.id)
+    .then(play => {
+      res.json({play})
+    })
+  }
+
   static postPlay(req, res, next){
     model.postPlay(req.body)
+    .then(play => {
+      res.status(201).json({play})
+    })
+  }
+
+  static editPlay(req, res, next){
+    model.editPlay(req.params.id, req.body)
     .then(play => {
       res.status(201).json({play})
     })
