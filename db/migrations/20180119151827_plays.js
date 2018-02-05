@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
     table.date('played_on').defaultTo(null)
     table.string('game_name').notNullable().defaultTo('')
     table.integer('bgg_game_id').defaultTo(0)
-    table.string('comment').notNullable().defaultTo('')
+    table.text('comment').notNullable().defaultTo('')
     table.timestamps(true, true)
   })
 }
