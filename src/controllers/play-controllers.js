@@ -1,4 +1,5 @@
 const model = require('../models/play-models')
+const addPlayFields = ['played_on', 'game_name', 'bgg_game_id']
 
 class PlayController {
 
@@ -21,6 +22,18 @@ class PlayController {
     .then(play => {
       res.status(201).json({play})
     })
+  }
+
+  static complete(req, res, next){
+    const errors = addPlayFields.filter(field => !req.body[field]).map(key => `${key}`)
+
+    if (errors.length){
+      const status = 400
+      const message = `Please complete fields: ${errors.join(', ')}`
+      return next({ status, message })
+    }
+
+    return next()
   }
 
   static editPlay(req, res, next){
